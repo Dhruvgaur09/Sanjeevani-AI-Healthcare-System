@@ -45,7 +45,7 @@ function GlobalProvider({ children }) {
 
   const login = (method, email, password = '') => {
     const finalEmail = email || 'johndoe@gmail.com'
-    fetch('http://localhost:8000/api/login', {
+    fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ method, email: finalEmail, password })
@@ -116,7 +116,7 @@ function GlobalProvider({ children }) {
 
     setPredictionsLoading(true)
     const apptsToSend = customAppts !== null ? customAppts : appointments
-    fetch('http://localhost:8000/api/predictions', {
+    fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/predictions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ user: email, force, appointments: apptsToSend, surveyData: parsedSurvey, apiKey: import.meta.env.VITE_GEMINI_API_KEY })
@@ -172,7 +172,7 @@ function GlobalProvider({ children }) {
 
   React.useEffect(() => {
     const email = currentUser?.email || 'default@sanjeevni.app'
-    fetch(`http://localhost:8000/api/health-data?user=${encodeURIComponent(email)}`)
+    fetch(`https://sanjeevani-ai-healthcare-system.onrender.com/api/health-data?user=${encodeURIComponent(email)}`)
       .then(r => r.json())
       .then(data => {
         if(data.healthData) setHealthData(data.healthData)
@@ -187,7 +187,7 @@ function GlobalProvider({ children }) {
 
   const logData = (form) => {
     const email = currentUser?.email || 'default@sanjeevni.app'
-    fetch('http://localhost:8000/api/log-data', {
+    fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/log-data', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...form, userEmail: email })
@@ -829,7 +829,7 @@ function FoodIntakeScreen({ onClose }) {
     if (!foodName) return
 
     setAdding(true)
-    fetch('http://localhost:8000/api/analyze-food', {
+    fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/analyze-food', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ foodName, quantity: Number(quantity) })
@@ -1547,7 +1547,7 @@ function Doctors() {
     { name: 'Dr. Johny Paji',    spec: 'Cardiologist',                  hospital: 'AIIMS Delhi',   dist: 2.3, wait: '15 min', exp: '18 yrs', rating: 4.9, reviews: 312, avail: 'AVAILABLE NOW',   availColor: '#00e5a0', availBg: 'rgba(0,229,160,0.1)',  type: 'Cardiologist' },
     { name: 'Dr. Sameer Singh',  spec: 'Diabetologist & Endocrinologist', hospital: 'Fortis',       dist: 3.1, wait: '30 min', exp: '12 yrs', rating: 4.8, reviews: 218, avail: 'AVAILABLE NOW',   availColor: '#00e5a0', availBg: 'rgba(0,229,160,0.1)',  type: 'Diabetologist' },
     { name: 'Dr. Aditya Popli',   spec: 'General Physician',             hospital: 'PGIMER',         dist: 1.8, wait: '45 min', exp: '22 yrs', rating: 4.7, reviews: 405, avail: 'NEXT IN 45 MIN', availColor: '#ff8c42', availBg: 'rgba(255,140,66,0.1)', type: 'General Physician' },
-    { name: 'Dr. Sneha Mehta',  spec: 'Cardiologist',                  hospital: 'Fortis Hospital', dist: 5.6, wait: '20 min', exp: '15 yrs', rating: 4.9, reviews: 289, avail: 'AVAILABLE NOW',   availColor: '#00e5a0', availBg: 'rgba(0,229,160,0.1)',  type: 'Cardiologist' },
+    { name: 'Dr. Mia Mehta',  spec: 'Cardiologist',                  hospital: 'Fortis Hospital', dist: 5.6, wait: '20 min', exp: '15 yrs', rating: 4.9, reviews: 289, avail: 'AVAILABLE NOW',   availColor: '#00e5a0', availBg: 'rgba(0,229,160,0.1)',  type: 'Cardiologist' },
   ]
 
   const filtered = doctors
@@ -1834,7 +1834,7 @@ function Chatbot() {
     setLoading(true)
 
     const email = currentUser?.email || 'default@sanjeevni.app'
-    fetch('http://localhost:8000/api/chat', {
+    fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: msg, userEmail: email, history: messages, appointments, surveyData })
@@ -2263,7 +2263,7 @@ function SurveyScreen({ onComplete }) {
   const generateAiGoal = async () => {
     setIsGeneratingGoal(true)
     try {
-      const res = await fetch('http://localhost:8000/api/generate-goal', {
+      const res = await fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/generate-goal', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ age, weight, height, gender, goal: selectedGoal })
@@ -2725,7 +2725,7 @@ function SurveyScreen({ onComplete }) {
                 }, 900)
                 
                 // Fetch AI Roadmap dynamically
-                fetch('http://localhost:8000/api/generate-roadmap', {
+                fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/generate-roadmap', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({ age, weight, height, gender, goal: selectedGoal, diet, conditions })
