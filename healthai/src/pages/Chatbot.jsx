@@ -18,7 +18,7 @@ export default function Chatbot() {
     setMessages(prev => [...prev, { role: 'user', text: input }]);
     setInput('');
     try {
-      const res = await fetch('http://localhost:8000/api/chat', {
+      const res = await fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
