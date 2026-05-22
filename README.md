@@ -1,202 +1,211 @@
-Sanjeevani – AI Preventive Healthcare System
+# 🩺 Sanjeevani AI Healthcare System
 
-🚀 Overview
+A futuristic AI-powered healthcare platform designed to help users monitor health, analyze symptoms, track lifestyle habits, and receive AI-generated wellness guidance in real time.
 
-Sanjeevani is an AI-powered preventive healthcare platform designed to help people detect possible health risks before diseases become serious. The system continuously monitors lifestyle, health data, food intake, and daily habits to provide personalized health guidance, lifestyle improvement plans, and doctor recommendations.
+## 🌐 Live Demo
+👉 https://sanjeevani-ai-healthcare-system-9p3jv7mb3-believe-labs.vercel.app/
 
-The vision of Sanjeevani is to make preventive healthcare smarter, more accessible, and more personalized using Artificial Intelligence.
+---
 
-🌟 Problem Statement
+# 👥 The Team
 
-Most people only visit doctors after becoming sick. Lack of continuous health monitoring, unhealthy lifestyle habits, poor diet management, and delayed medical attention increase the risk of serious diseases.
+* **Dhruv Gaur (Team Lead):** Full Stack Development, AI Integration, Backend APIs, and Deployment.
+* **Member 2:** UI/UX Design, Frontend Styling, and Responsive Layouts.
+* **Member 3:** API Testing, Feature Integration, and Data Handling.
 
-Sanjeevani aims to solve this problem by:
+---
 
-Monitoring health continuously
-Detecting unhealthy patterns early
-Providing AI-based preventive guidance
-Connecting users with doctors before conditions worsen
-✨ Key Features
-🔐 1. Smart User Onboarding
+# 🎯 Project Overview
 
-When users sign up, the system collects important health and lifestyle information such as:
+Sanjeevani AI Healthcare System is an intelligent healthcare web application built using modern frontend and backend technologies. The platform helps users maintain better health awareness through AI-powered analysis, personalized recommendations, and interactive dashboards.
 
-Age
-Weight
-Height
-Gender
-Daily activity level
-Dietary preference (Veg / Non-Veg)
-Existing medical conditions
-Health goals:
-Weight Gain
-Weight Loss
-Marathon Training
-Fitness Improvement
-Muscle Gain
-Healthy Lifestyle
+The system combines healthcare tracking with AI assistance to create a smart digital health companion.
 
-Based on this information, Sanjeevani creates a personalized health roadmap.
+---
 
-📊 2. Health Dashboard
+# ✨ Key Features
 
-Users can manually upload and monitor:
+* 🤖 **AI Healthcare Chatbot**
+  * Users can interact with an AI-powered medical assistant for health-related guidance.
 
-Blood Sugar
-Blood Pressure
-Sleep Hours
-Water Intake
-Heart Rate
-Steps Walked
-Calories Burned
-AI Health Analysis
+* 📊 **Health Dashboard**
+  * Displays health metrics, activity summaries, and personalized wellness information.
 
-The AI system:
+* 🩺 **Disease Prediction System**
+  * Predicts possible health conditions based on symptoms and health inputs.
 
-Analyzes all uploaded data
-Detects abnormal patterns
-Gives a health score out of 100
-Generates personalized health suggestions
+* 🍎 **Food Intake & Nutrition Tracking**
+  * Tracks meals, calories, protein, carbs, and nutrition insights.
 
-🥗 3. Lifestyle Tracking System
+* 💪 **Lifestyle Monitoring**
+  * Helps users monitor sleep, water intake, exercise, and daily habits.
 
-The Lifestyle Tracking module continuously tracks:
+* 🧠 **AI Personalized Roadmaps**
+  * Generates customized wellness and fitness improvement plans using AI.
 
-Sleep patterns
-Daily activity
-Water intake
-Food intake
+* 🔐 **Authentication System**
+  * Secure login and signup functionality for personalized experiences.
 
-🍛 AI Food Analysis
+* 📱 **Responsive Modern UI**
+  * Optimized for desktop, tablet, and mobile devices.
 
-Users can upload food details manually, and the AI analyzes:
+---
 
-Protein intake
-Carbohydrates
-Fats
-Calories
-Nutritional balance
+# 🛠️ Technical Implementation
 
-The system helps users achieve their:
+## Frontend
+* **React.js + Vite**
+  * Fast and optimized frontend development environment.
 
-Daily protein goals
-Fitness goals
-Healthy diet targets
+* **CSS3**
+  * Custom futuristic healthcare-themed UI design.
 
-🧠 4. AI Medical Monitoring
+* **React Router**
+  * Smooth navigation between pages and dashboards.
 
-This is the core intelligence system of Sanjeevani.
+---
 
-It combines:
+## Backend
+* **FastAPI (Python)**
+  * Handles API routes, AI processing, and backend logic.
 
-Health Dashboard data
-Lifestyle Tracking data
-Food Intake data
+* **Google Gemini API**
+  * Powers AI chatbot responses and healthcare recommendations.
 
-The AI continuously:
+* **REST APIs**
+  * Used for frontend-backend communication.
 
-Monitors overall health
-Generates health summaries
-Creates graphical reports
-Detects risk factors
-Predicts possible health issues
-Recommends preventive actions
+---
 
-👨‍⚕️ 5. Smart Doctor Recommendation System
+## Database & Storage
+* **Local Storage**
+  * Stores temporary user health data and preferences.
 
-If the AI detects concerning health patterns, Sanjeevani recommends nearby doctors.
+---
 
-Users can:
+## Deployment
+* **Frontend Deployment:** Vercel
+* **Backend Deployment:** Render
 
-Book doctor appointments
-Connect with doctors online
-Share complete health history automatically
+---
 
-This helps doctors understand the patient faster and provide better treatment.
+# 🚀 How to Run the Project
 
-💬 6. AI Health Chatbot
+## Option 1: Use Online
+Simply open the live website:
 
-Sanjeevani includes an AI chatbot that can:
+👉 https://sanjeevani-ai-healthcare-system-9p3jv7mb3-believe-labs.vercel.app/
 
-Answer health-related questions
-Provide lifestyle guidance
-Explain health reports
-Suggest healthy habits
-Assist users 24/7
-🚨 7. Smart Health Alerts
+---
 
-The system generates instant alerts when:
+## Option 2: Run Locally
 
-Health scores drop
-Abnormal readings are detected
-Lifestyle habits become unhealthy
+### 1️⃣ Clone the Repository
 
-Alerts:
+```bash
+git clone <your-repository-link>
+```
 
-Appear as popup notifications
-Are stored in the Alerts Section
-🛠️ Tech Vision
+### 2️⃣ Open Frontend Folder
 
-Sanjeevani combines:
+```bash
+cd healthai
+```
 
-Artificial Intelligence
-Health Analytics
-Preventive Healthcare
-Lifestyle Monitoring
-Nutrition Analysis
-Smart Doctor Connectivity
+### 3️⃣ Install Dependencies
 
-to create a next-generation healthcare ecosystem.
+```bash
+npm install
+```
 
-🧩 Future Scope
+### 4️⃣ Start Frontend
 
-Future improvements planned for Sanjeevani:
+```bash
+npm run dev
+```
 
-Smartwatch Integration
-Real-time Health Monitoring
-AI Disease Prediction Models
-Voice-based AI Assistant
-Emergency Health Detection
-Mental Health Monitoring
-Personalized Workout Recommendations
-AI-generated Diet Plans
-Integration with Hospitals & Labs
-👨‍💻 Team Contributions
-🧠 Dhruv Gaur
+---
 
-Worked on:
+## Backend Setup
 
-Backend Development
-Strategy Implementation
-Advanced AI Implementation
-Health Monitoring Logic
-AI Analysis System
-🎨 Saksham
+### 1️⃣ Open Backend Folder
 
-Worked on:
+```bash
+cd backend
+```
 
-UI/UX Design
-Frontend Improvements
-Bug Fixing
-System Optimization
-📑 Tejasvi
+### 2️⃣ Install Python Dependencies
 
-Worked on:
+```bash
+pip install -r requirements.txt
+```
 
-PPT Preparation
-Model Testing
-System Validation
-Presentation & Documentation
-🎯 Vision
+### 3️⃣ Run Backend Server
 
-Our goal is to transform healthcare from reactive treatment to preventive care using AI.
+```bash
+uvicorn main:app --reload
+```
 
-Instead of treating diseases after they happen, Sanjeevani focuses on:
+---
 
-“Detecting risks early, improving lifestyle, and helping people stay healthy.”
+# 🔑 Environment Variables
 
-📌 Conclusion
+Create a `.env` file inside the frontend folder:
 
-Sanjeevani is not just a healthcare app — it is an intelligent preventive healthcare assistant designed to improve lives through AI-powered monitoring, analysis, and guidance.
+```env
+VITE_GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+VITE_API_URL=YOUR_BACKEND_URL
+```
 
-By combining continuous health tracking, nutrition analysis, AI monitoring, and doctor connectivity, Sanjeevani aims to become a complete digital healthcare ecosystem for the future of India.
+Create a `.env` file inside the backend folder:
+
+```env
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+```
+
+---
+
+# 📚 Technologies Used
+
+* React.js
+* Vite
+* FastAPI
+* Python
+* Google Gemini API
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+* Render
+* Vercel
+
+---
+
+# 🎓 Developed For
+
+*Chitkara University - CSE (AI & ML) Department*
+
+---
+
+# 🚀 Future Enhancements
+
+* Smart wearable device integration
+* Real-time doctor consultation
+* AI voice assistant
+* Cloud database integration
+* Advanced medical report analysis
+* AI emergency health alerts
+
+---
+
+# 📌 Project Status
+
+✅ Active Development  
+✅ Frontend Deployed  
+✅ Backend Integrated  
+✅ AI Features Working
+
+---
+
+# ❤️ Vision
+
+To build an intelligent AI-powered healthcare ecosystem that makes healthcare guidance more accessible, interactive, and personalized for everyone.
