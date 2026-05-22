@@ -21,6 +21,7 @@ app = FastAPI(title="Sanjeevni API", version="1.0.0")
 
 # Setup Gemini SDK
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+print("API KEY:", GEMINI_API_KEY[:8] + "..." + GEMINI_API_KEY[-4:] if GEMINI_API_KEY else "NOT SET")
 if GEMINI_API_KEY:
     GEMINI_API_KEY = GEMINI_API_KEY.strip().strip("'").strip('"')
     genai.configure(api_key=GEMINI_API_KEY)
@@ -798,6 +799,8 @@ def chat(payload: dict = Body(...)):
             
         return {"reply": response.text}
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         print(f"Gemini Chat Error: {e}")
         reply = get_heuristic_chat_reply(message, hd)
         return {"reply": reply}
