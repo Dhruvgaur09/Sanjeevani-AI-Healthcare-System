@@ -467,7 +467,7 @@ def generate_goal(payload: dict = Body(...)):
         for a {age}-year-old {gender} (Weight: {weight}kg, Height: {height}cm) who selected the primary goal of '{goal}'.
         The sentence should read as a first-person objective or a direct command for the user. Do not use quotes.
         """
-        model = genai.GenerativeModel('gemini-1.5-pro')
+        model = genai.GenerativeModel('gemini-2.0-flash')
         response = model.generate_content(prompt)
         text = response.text.strip().replace('"', '')
         return {"goalDetail": text}
@@ -520,7 +520,7 @@ def generate_roadmap(payload: dict = Body(...)):
 
             Output ONLY the JSON object, no markdown, no quotes.
             """
-            model = genai.GenerativeModel('gemini-1.5-pro', generation_config={"response_mime_type": "application/json"})
+            model = genai.GenerativeModel('gemini-2.0-flash', generation_config={"response_mime_type": "application/json"})
             response = model.generate_content(prompt)
             text = response.text.strip()
             result = json.loads(text)
@@ -648,7 +648,7 @@ def get_predictions(payload: dict = Body(...)):
         Do not output any markdown formatting, code block backticks (like ```json), or extra text outside the JSON.
         """
         
-        model = genai.GenerativeModel("gemini-1.5-pro")
+        model = genai.GenerativeModel("gemini-2.0-flash")
         response = model.generate_content(
             prompt,
             generation_config={"response_mime_type": "application/json"}
@@ -787,7 +787,7 @@ def chat(payload: dict = Body(...)):
         5. Keep your response concise, engaging, and directly relevant. Use bullet points for steps or lists to make it highly readable.
         """
         
-        model = genai.GenerativeModel(model_name="gemini-1.5-pro", system_instruction=system_instruction)
+        model = genai.GenerativeModel(model_name="gemini-2.0-flash", system_instruction=system_instruction)
         
         if history_list:
             formatted_history = format_chat_history(history_list)
@@ -869,7 +869,7 @@ def analyze_food(payload: dict = Body(...)):
         Do not output any markdown formatting, code block backticks (like ```json), or extra text outside the JSON.
         """
         
-        model = genai.GenerativeModel("gemini-1.5-pro")
+        model = genai.GenerativeModel("gemini-2.0-flash")
         response = model.generate_content(
             prompt,
             generation_config={"response_mime_type": "application/json"}

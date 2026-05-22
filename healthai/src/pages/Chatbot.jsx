@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { GlobalContext } from '../App.jsx';
 
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export default function Chatbot() {
   const { currentUser } = useContext(GlobalContext);
   const [messages, setMessages] = useState([]);
@@ -18,7 +20,7 @@ export default function Chatbot() {
     setMessages(prev => [...prev, { role: 'user', text: input }]);
     setInput('');
     try {
-      const res = await fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/chat', {
+      const res = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

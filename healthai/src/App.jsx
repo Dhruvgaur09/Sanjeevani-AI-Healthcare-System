@@ -4,6 +4,8 @@ import { Line, Bar } from 'react-chartjs-2'
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Tooltip, Filler, Legend } from 'chart.js'
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Tooltip, Filler, Legend)
 
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 // ─── GLOBAL STATE ───
 const GlobalContext = React.createContext()
 
@@ -45,7 +47,7 @@ function GlobalProvider({ children }) {
 
   const login = (method, email, password = '') => {
     const finalEmail = email || 'johndoe@gmail.com'
-    fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/login', {
+    fetch(`${API_BASE}/api/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ method, email: finalEmail, password })
@@ -116,7 +118,7 @@ function GlobalProvider({ children }) {
 
     setPredictionsLoading(true)
     const apptsToSend = customAppts !== null ? customAppts : appointments
-    fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/predictions', {
+    fetch(`${API_BASE}/api/predictions`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ user: email, force, appointments: apptsToSend, surveyData: parsedSurvey, apiKey: import.meta.env.VITE_GEMINI_API_KEY })
@@ -172,7 +174,7 @@ function GlobalProvider({ children }) {
 
   React.useEffect(() => {
     const email = currentUser?.email || 'default@sanjeevni.app'
-    fetch(`https://sanjeevani-ai-healthcare-system.onrender.com/api/health-data?user=${encodeURIComponent(email)}`)
+    fetch(`${API_BASE}/api/health-data?user=${encodeURIComponent(email)}`)
       .then(r => r.json())
       .then(data => {
         if(data.healthData) setHealthData(data.healthData)
@@ -187,7 +189,7 @@ function GlobalProvider({ children }) {
 
   const logData = (form) => {
     const email = currentUser?.email || 'default@sanjeevni.app'
-    fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/log-data', {
+    fetch(`${API_BASE}/api/log-data`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...form, userEmail: email })
@@ -829,7 +831,7 @@ function FoodIntakeScreen({ onClose }) {
     if (!foodName) return
 
     setAdding(true)
-    fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/analyze-food', {
+    fetch(`${API_BASE}/api/analyze-food`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ foodName, quantity: Number(quantity) })
@@ -1834,7 +1836,7 @@ function Chatbot() {
     setLoading(true)
 
     const email = currentUser?.email || 'default@sanjeevni.app'
-    fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/chat', {
+    fetch(`${API_BASE}/api/chat`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: msg, userEmail: email, history: messages, appointments, surveyData })
@@ -2263,7 +2265,7 @@ function SurveyScreen({ onComplete }) {
   const generateAiGoal = async () => {
     setIsGeneratingGoal(true)
     try {
-      const res = await fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/generate-goal', {
+      const res = await fetch(`${API_BASE}/api/generate-goal`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ age, weight, height, gender, goal: selectedGoal })
@@ -2725,7 +2727,7 @@ function SurveyScreen({ onComplete }) {
                 }, 900)
                 
                 // Fetch AI Roadmap dynamically
-                fetch('https://sanjeevani-ai-healthcare-system.onrender.com/api/generate-roadmap', {
+                fetch(`${API_BASE}/api/generate-roadmap`, {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({ age, weight, height, gender, goal: selectedGoal, diet, conditions })
